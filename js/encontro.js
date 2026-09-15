@@ -24,6 +24,7 @@ function escolher(btn) {
 
     // limpa uma confirmação anterior, se houver
     document.getElementById("confirmacao").innerText = "";
+    document.getElementById("btn-whatsapp").classList.add("oculto");
 }
 
 function escolherDia(btn) {
@@ -33,13 +34,20 @@ function escolherDia(btn) {
     const agendamento = document.getElementById("agendamento");
     agendamento.dataset.dia = btn.dataset.dia;
 
+    // mostra o campo de horário
+    const campoHorario = document.getElementById("campo-horario");
+    campoHorario.classList.remove("oculto");
+    document.getElementById("horario").focus();
+
     document.getElementById("confirmacao").innerText = "";
+    document.getElementById("btn-whatsapp").classList.add("oculto");
 }
 
 function confirmarEncontro() {
     const agendamento = document.getElementById("agendamento");
     const escolha = agendamento.dataset.escolha;
     const dia = agendamento.dataset.dia;
+    const horario = document.getElementById("horario").value;
     const confirmacao = document.getElementById("confirmacao");
 
     if (!dia) {
@@ -48,8 +56,21 @@ function confirmarEncontro() {
         return;
     }
 
+    if (!horario) {
+        confirmacao.style.color = "#c0392b";
+        confirmacao.innerText = "Escolhe o horário antes de confirmar! 🕒";
+        return;
+    }
+
     confirmacao.style.color = "#333";
-    confirmacao.innerText = `Combinado: ${escolha} na ${dia} 💕`;
+    confirmacao.innerText = `Combinado: ${escolha} na ${dia} às ${horario} 💕`;
+
+    // monta o link do WhatsApp com a mensagem pronta
+    const telefone = "5544984239643";
+    const mensagem = `Ei! Combinado o nosso encontro: ${escolha} na ${dia} às ${horario} `;
+    const btnWhatsapp = document.getElementById("btn-whatsapp");
+    btnWhatsapp.href = `https://api.whatsapp.com/send?phone=${telefone}&text=${encodeURIComponent(mensagem)}`;
+    btnWhatsapp.classList.remove("oculto");
 }
 
 

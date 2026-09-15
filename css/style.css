@@ -188,3 +188,73 @@ button {
     font-weight: bold;
     text-align: center;
 }
+
+
+.campo-horario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+ 
+.campo-horario.oculto {
+    display: none;
+}
+ 
+.campo-horario label {
+    font-size: 14px;
+    color: #7a6a76;
+    font-weight: 600;
+}
+ 
+.campo-horario input {
+    padding: 10px 14px;
+    border: 2px solid #ffb8e0;
+    border-radius: 12px;
+    font-size: 15px;
+    font-family: inherit;
+    color: #3a2e3e;
+    background-color: #fff0f8;
+}
+#confirmacao {
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+    margin: 0;
+    color: #3a2e3e;
+}
+ 
+#confirmacao {
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+    margin: 0;
+    color: #3a2e3e;
+}
+ 
+.btn-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 12px 26px;
+    font-size: 15px;
+    font-weight: 700;
+    font-family: inherit;
+    border-radius: 50px;
+    background-color: #25D366;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: 0 6px 14px rgba(37, 211, 102, 0.4);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+ 
+.btn-whatsapp:hover {
+    background-color: #1ebe59;
+    transform: scale(1.05);
+    box-shadow: 0 8px 18px rgba(37, 211, 102, 0.5);
+}
+ 
+.btn-whatsapp.oculto {
+    display: none;
+}
