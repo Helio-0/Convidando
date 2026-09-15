@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <script defer src="../js/encontro.js"></script>
+    <title>Decidindo Lugar </title>
+</head>
+
+<body>
+    <main>
+        <div class="card">
+            <h1 id="titulo-encontro">Onde vamos ir? 🥰</h1>
+            <p class="subtitulo">Escolhe uma opção:</p>
+
+            <div class="opcoes">
+                <button class="opcao" data-opcao="Vamos comer Pizza ">🍕 Pizza</button>
+                <button class="opcao" data-opcao="Vamos tomar Café ">☕ Café</button>
+                <button class="opcao" data-opcao="Vamos ir ao Bar ">🍻 Bar</button>
+                <button class="opcao" data-opcao="Vamos ir ao Shopping ">🛍️ Shopping</button>
+
+            </div>
+
+            <p id="resultado"></p>
+
+            <div id="agendamento" class="agendamento oculto">
+                <p class="aviso-agenda">📚 Escolhe um dia :</p>
+
+                <div class="dias-semana">
+                    <button class="dia" data-dia="Segunda-feira">Segunda</button>
+                    <button class="dia" data-dia="Terça-feira">Terça</button>
+                    <button class="dia" data-dia="Quarta-feira">Quarta</button>
+                    <button class="dia" data-dia="Quinta-feira">Quinta</button>
+                    <button class="dia" data-dia="Sexta-feira">Sexta</button>
+                </div>
+
+                <div id="campo-horario" class="campo-horario oculto">
+                    <label for="horario">🕒 Horário</label>
+                    <input type="time" id="horario">
+                </div>
+
+                <button id="btn-confirmar" class="btn-confirmar">Confirmar encontro</button>
+            </div>
+
+            <p id="confirmacao"></p>
+            <a id="btn-whatsapp" class="btn-whatsapp oculto" target="_blank" rel="noopener">
+                📲 Enviar no WhatsApp
+            </a>
+        </div>
+    </main>
+</body>
+
+</html>
